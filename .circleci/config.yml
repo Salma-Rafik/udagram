@@ -42,3 +42,4 @@ jobs:
           name: Back-End test
           command: |
             npm run backend:test
+      - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
