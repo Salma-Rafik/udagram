@@ -30,3 +30,15 @@ jobs:
           name: Deploy App
           command: |
             npm run frontend:deploy
+      - run:
+          name: Deploy backend
+          command: |
+            npm run backend:deploy
+      - run:
+          name: Front-End test
+          command: |
+            npm run frontend:test
+      - run:
+          name: Back-End test
+          command: |
+            npm run backend:test

@@ -24,6 +24,10 @@ The project can run but is missing some information to connect to the database a
 
 - A S3 bucket for hosting uploaded pictures.
 
+- EB to deploy the backend.
+
+- CircleCI to make pipeline.
+
 ```
 
 ### Installation
@@ -64,4 +68,13 @@ The e2e tests are using Protractor and Jasmine.
 
 [License](LICENSE.txt)
 
+## APP endpoint
+
 app endpoint: http://localhost:4200/
+the application hosted on: http://udagram-salma.s3-website-us-east-1.amazonaws.com
+
+## Pipeline process
+
+1. push modifications to github.
+2. new pipeline on circleCI.
+3. workflow test and deploy via AWS.
