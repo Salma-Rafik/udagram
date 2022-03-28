@@ -43,3 +43,7 @@ jobs:
           command: |
             npm run backend:test
       - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
+      - run:
+          name: Configure AWS Access Key ID
+          command: aws configure set aws_access_key_id AKIATWWUVWGEYBBCDV4S
+            
