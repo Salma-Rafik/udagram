@@ -45,15 +45,15 @@ jobs:
       - run:
           name: Configure AWS Access Key ID
           command: |
-            aws setenv aws_access_key_id=$AWS_ACCESS_KEY_ID
+            aws setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
       - run:
-          name: Configure AWS Access Key ID
+          name: Configure AWS default region
           command: |
-            AWS_DEFAULT_REGION=$AWS_REGION
+            aws setenv AWS_DEFAULT_REGION=$AWS_REGION
       - run:
-          name: Configure AWS Access Key ID
+          name: Configure AWS secret access key
           command: |
-            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+            aws setenv AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
       - run:
           name: Install awscli
           command: |
