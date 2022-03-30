@@ -42,8 +42,11 @@ jobs:
           name: Back-End test
           command: |
             npm run backend:test
-      - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
       - run:
           name: Configure AWS Access Key ID
-          command: aws configure set aws_access_key_id AKIATWWUVWGEYBBCDV4S
-            
+          command: aws setenv aws_access_key_id=$AWS_ACCESS_KEY_ID AWS_DEFAULT_REGION=$AWS_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - run:
+          name: Install awscli
+          command: |
+            pip3 install awscli 
+      - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
