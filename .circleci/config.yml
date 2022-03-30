@@ -43,10 +43,6 @@ jobs:
           command: |
             npm run frontend:deploy
       - run:
-          name: eb environment variables
-          command: |
-            eb setenv PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB
-      - run:
           name: Deploy backend
           command: |
             npm run backend:deploy
