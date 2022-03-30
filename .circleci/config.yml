@@ -43,6 +43,10 @@ jobs:
           command: |
             npm run frontend:deploy
       - run:
+          name: eb cli install
+          command: |
+            python .\aws-elastic-beanstalk-cli-setup\scripts\ebcli_installer.py
+      - run:
           name: eb environment variables
           command: |
             cd udagram-api && eb setenv PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB
