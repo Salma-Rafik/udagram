@@ -11,6 +11,18 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
+          name: Configure AWS Access Key ID
+          command: |
+            aws configure set aws_access_key_id AKIATWWUVWGEYBBCDV4S
+      - run:
+          name: Configure AWS default region
+          command: |
+            aws configure set Default_region_name us-east-1
+      - run:
+          name: Configure AWS secret access key
+          command: |
+            aws configure set AWS_SECRET_ACCESS_KEY VAgFfLeNhgnjn5el+RdFUekSbyRPEfCxbpVqUBSX
+      - run:
           name: Front-End Install
           command: |
             npm run frontend:install
@@ -26,18 +38,6 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
-      - run:
-          name: Configure AWS Access Key ID
-          command: |
-            aws configure set aws_access_key_id AKIATWWUVWGEYBBCDV4S
-      - run:
-          name: Configure AWS default region
-          command: |
-            aws configure set Default_region_name us-east-1
-      - run:
-          name: Configure AWS secret access key
-          command: |
-            aws configure set AWS_SECRET_ACCESS_KEY VAgFfLeNhgnjn5el+RdFUekSbyRPEfCxbpVqUBSX
       - run:
           name: Deploy App
           command: |
