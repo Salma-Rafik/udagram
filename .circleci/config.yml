@@ -64,12 +64,3 @@ jobs:
             eb setenv PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_DB=$POSTGRES_DB
 
       - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
-
-workflows:
-  build-deploy:
-    jobs:
-      - js_build
-      - build_server_pdfs: # << the job to conditionally run based on the filter-by-branch-name.
-          filters:
-            branches:
-              only: main/master
