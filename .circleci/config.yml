@@ -10,7 +10,6 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - eb/setup
       - run:
           name: Front-End Install
           command: |
@@ -31,6 +30,12 @@ jobs:
           name: Deploy App
           command: |
             npm run frontend:deploy
+  deploy-backend-ebs:
+    docker:
+      - image: cimg/node:15.9.0
+    steps:
+      - checkout
+      - eb/setup
       - run:
           name: eb cli install
           command: |
