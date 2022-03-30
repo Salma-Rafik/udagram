@@ -44,13 +44,16 @@ jobs:
             npm run backend:test
       - run:
           name: Configure AWS Access Key ID
-          command: aws setenv aws_access_key_id=$AWS_ACCESS_KEY_ID
+          command: |
+            aws setenv aws_access_key_id=$AWS_ACCESS_KEY_ID
       - run:
           name: Configure AWS Access Key ID
-          command: AWS_DEFAULT_REGION=$AWS_REGION
+          command: |
+            AWS_DEFAULT_REGION=$AWS_REGION
       - run:
           name: Configure AWS Access Key ID
-          command: AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+          command: |
+            AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
       - run:
           name: Install awscli
           command: |
