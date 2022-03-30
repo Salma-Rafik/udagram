@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/base:stable"
+      - image: circleci/node
     steps:
       - node/install
       - checkout
@@ -47,9 +47,6 @@ jobs:
           command: |
             pip3 install awscli 
       - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
-
-jobs:
-  configuration:
       - run:
           name: Configure AWS Access Key ID
           command: |
