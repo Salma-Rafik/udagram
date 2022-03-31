@@ -1,2 +1,2 @@
 cp -rf .elasticbeanstalk www
-cd www && eb deploy Udagram-env
+cd www && eb deploy Udagramapi-env
