@@ -51,8 +51,8 @@ jobs:
       - run: cd udagram-api && npm run deploy
 
 workflows:
-  node-build-tests:
-    jobs:
+  build-deploy:
+      jobs:
       - deploy-backend-ebs
       - build-compile-fend
       # - compile-test-fend:
@@ -62,3 +62,6 @@ workflows:
           requires:
               - build-compile-fend
             # - compile-test-fend
+          filters:
+            branches:
+              only: /master\/.*/
