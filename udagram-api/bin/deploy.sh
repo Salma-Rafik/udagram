@@ -1,2 +1,3 @@
 cp -rf .elasticbeanstalk www
+eb init && eb setenv AWS_DEFAULT_REGION=$AWS_REGION PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB POSTGRES_PASSWORD=$POSTGRES_PASSWORD
 cd www && eb deploy Udagramapi-env
