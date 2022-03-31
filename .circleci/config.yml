@@ -53,6 +53,7 @@ jobs:
 workflows:
   build-deploy:
       jobs:
+      - run: eb setenv PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB POSTGRES_PASSWORD=$POSTGRES_PASSWORD
       - deploy-backend-ebs
       - build-compile-fend
       # - compile-test-fend:
