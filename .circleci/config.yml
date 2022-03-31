@@ -48,7 +48,7 @@ jobs:
       - eb/setup
       - run: cd udagram-api && npm install
       - run: cd udagram-api && npm run build
-      - run: eb init && eb setenv PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB POSTGRES_PASSWORD=$POSTGRES_PASSWORD AWS_DEFAULT_REGION=$AWS_REGION
+      - run: eb init && eb setenv AWS_DEFAULT_REGION=$AWS_REGION PORT=$PORT POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_DB=$POSTGRES_DB POSTGRES_PASSWORD=$POSTGRES_PASSWORD 
       - run: cd udagram-api && npm run deploy
 
 workflows:
