@@ -42,7 +42,7 @@ jobs:
       - run: aws s3 cp udagram-frontend/www s3://${AWS_BUCKET}/ --recursive
   deploy-backend-ebs:
     docker:
-      - image: cimg/node:15.9.0
+      - image: cimg/node:16.13.0
     steps:
       - checkout
       - eb/setup
