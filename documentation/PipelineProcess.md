@@ -9,6 +9,7 @@
 7. Front-End Build
 8. Back-End Build
 9. Deploy Frontend
-10. Deploy backend
-11. Front-End test
-12. Back-End test
+10. eb-cli/setup
+11. Deploy backend
+12. Front-End test
+13. Back-End test

@@ -1,6 +1,5 @@
 
 version: 2.1
-
 orbs:
   eb: circleci/aws-elastic-beanstalk@1.0.0
   node: circleci/node@4.1.0
@@ -56,3 +55,6 @@ workflows:
     jobs:
       - deploy-backend-ebs
       - build-compile-fend
+      - copy-frontend-files-s3:
+          requires:
+              - build-compile-fend
