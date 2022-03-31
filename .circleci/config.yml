@@ -24,14 +24,6 @@ jobs:
       - checkout
       - run: cd udagram-frontend && npm install
       - run: cd udagram-frontend && npm run build
-
-  # compile-test-fend:
-  #   executor: browsers
-  #   steps:
-  #     - checkout
-  #     - node/install-packages
-  #     - run: cd udagram-frontend && npm install
-  #     - run: cd udagram-frontend && npm test
   copy-frontend-files-s3:
     docker:
       - image: python:3.7-alpine3.11
@@ -64,10 +56,3 @@ workflows:
     jobs:
       - deploy-backend-ebs
       - build-compile-fend
-      # - compile-test-fend:
-      #     requires:
-      #       - build-compile-fend
-      - copy-frontend-files-s3:
-          requires:
-              - build-compile-fend
-            # - compile-test-fend
